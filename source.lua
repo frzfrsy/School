@@ -1,6 +1,10 @@
+if game:GetService("CoreGui"):FindFirstChild("School") then
+	game:GetService("CoreGui").School:Destroy()
+end
+
 local Lib = {}
 
-function Lib:New(title, smokeColour, outlineColour)
+function Lib:New(title, smokeColour, outlineColour, smokeThickness)
 	local UILib = Instance.new("ScreenGui")
 	local DropShadowHolder = Instance.new("Frame")
 	local DropShadow = Instance.new("ImageLabel")
@@ -23,7 +27,7 @@ function Lib:New(title, smokeColour, outlineColour)
 	local ShowMain = Instance.new("TextButton")
 
 	UILib.Name = "School"
-	UILib.Parent = game:GetService("Players").LocalPlayer.PlayerGui
+	UILib.Parent = game:GetService("CoreGui")
 	UILib.ZIndexBehavior = Enum.ZIndexBehavior.Global
 	
 	hovers.PlaybackSpeed = 4
@@ -60,7 +64,7 @@ function Lib:New(title, smokeColour, outlineColour)
 	DropShadow.ZIndex = 0
 	DropShadow.Image = "rbxassetid://6015897843"
 	DropShadow.ImageColor3 = smokeColour
-	DropShadow.ImageTransparency = 0.500
+	DropShadow.ImageTransparency = smokeThickness
 	DropShadow.ScaleType = Enum.ScaleType.Slice
 	DropShadow.SliceCenter = Rect.new(49, 49, 450, 450)
 
