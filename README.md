@@ -4,7 +4,7 @@ local Boot = loadstring(game:HttpGet("https://raw.githubusercontent.com/frzfrsy/
 ```
 
 ```lua
-local Form = Boot.Main:New("Screepstu UI Mini")
+local Form = Boot:New("Screepstu UI Mini")
 ```
 
 Creating button:
