@@ -20,27 +20,25 @@ local form = components:New(
 	0 --Smoke thickness (0 to 1, 0 is opaque, 1 is transparent, use decimals if needed)
 )
 
+--[[ BUTTON ]]
 form:Button("Print Random String", "A various button.", function()
-	print(randomString()) --[[ here is the callback ]]
+	print(randomString())
 end)
 
+--[[ TOGGLE ]]
 form:Toggle("Auto Print", "A super toggle.", function(state)
 	if state then
-		PrintToggle = true --[[ here is the callback ]]
-		while PrintToggle do
-			print(randomString())
-			task.wait()
-		end
+		print(state)
 	else
-		PrintToggle = false --[[ here is the callback ]]
+		print(state)
 	end
 end)
-
+ --[[ TEXT BOXES ]]
 form:TextBox("Walk Speed", "Change your walk speed, input only numeric because you want the speed value not ABC.", function(val)
-	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = val --[[ here is the callback ]]
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = val
 end)
 
 form:TextBox("Jump Power", "Change your jump power, input only numeric because you want the power value not ABC.", function(val)
-	game.Players.LocalPlayer.Character.Humanoid.JumpPower = val --[[ here is the callback ]]
+	game.Players.LocalPlayer.Character.Humanoid.JumpPower = val
 end)
 ```
