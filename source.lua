@@ -1,5 +1,5 @@
 _G.Main = {};
-_G.Main:New = function(title)
+function _G.Main:New(title)
 	local ScreenGui = Instance.new("ScreenGui");
 	local Frame = Instance.new("Frame");
 	local Header = Instance.new("Frame");
@@ -157,7 +157,7 @@ _G.Main:New = function(title)
 	end
 	coroutine.wrap(OSFUI_fake_script)();
 	_G.Frame = {};
-	_G.Frame:Button = function(title, description, call)
+	function _G.Frame:Button(title, description, call)
 		local Button = Instance.new("TextButton");
 		local Description = Instance.new("TextLabel");
 		local UITextSizeConstraint = Instance.new("UITextSizeConstraint");
@@ -234,4 +234,5 @@ _G.Main:New = function(title)
 	end;
 	return _G.Frame;
 end;
+
 return _G.Main;
