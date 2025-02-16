@@ -1,6 +1,10 @@
 Booting:
 ```lua
-local Form = loadstring(game:HttpGet("https://raw.githubusercontent.com/frzfrsy/School/main/source.lua"))()
+local Boot = loadstring(game:HttpGet("https://raw.githubusercontent.com/frzfrsy/School/main/source.lua"))()
+```
+
+```lua
+local Form = Boot.Main:New("Screepstu UI Mini")
 ```
 
 Creating button:
