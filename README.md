@@ -1,18 +1,37 @@
-Booting:
+Literal Example:
 ```lua
-local Boot = loadstring(game:HttpGet("https://raw.githubusercontent.com/frzfrsy/School/main/source.lua"))()
-```
+function randomString()
+	local length = math.random(50,50)
+	local array = {}
+	for i = 1, length do
+		array[i] = string.char(math.random(32, 126))
+	end
+	return table.concat(array)
+end
 
-```lua
-local Form = Boot:New("Screepstu UI Mini")
-```
+local form = Lib:New(
+	"School", --Title of the form
+	Color3.fromRGB(255, 255, 255), --Smoke colour (you can use HSV or HEX or 'new')
+	Color3.fromRGB(255, 255, 255) --Outline colour (you can use HSV or HEX or 'new')
+)
 
-Creating button:
-```lua
-Form:Button(
-	"Print 'Heloooo Sweeetiee'",
-	"A button that prints a string but super useless.",
-	function()
-		print("Heloooo Sweeetiee")
-	end)
+form:Button("Print Random String", "A various button.", function()
+	print(randomString())
+end)
+
+form:Toggle("Auto Print", "A super toggle.", function(state)
+	if state then
+		PrintToggle = true
+		while PrintToggle do
+			print(randomString())
+			task.wait()
+		end
+	else
+		PrintToggle = false
+	end
+end)
+
+form:TextBox("Walk Speed", "Change your walkspeed, input only numeric because you want the speed value not ABC.", function(val)
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = val
+end)
 ```
