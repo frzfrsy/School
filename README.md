@@ -16,7 +16,8 @@ local components = loadstring(game:HttpGet("https://raw.githubusercontent.com/fr
 local form = components:New(
 	"School", --Title of the form
 	Color3.fromRGB(255, 255, 255), --Smoke colour (you can use fromHSV or fromHex or 'new')
-	Color3.fromRGB(255, 255, 255) --Outline colour (you can use fromHSV or fromHex or 'new')
+	Color3.fromRGB(255, 255, 255), --Outline colour (you can use fromHSV or fromHex or 'new')
+	0.5 --Smoke thickness (0 to 1, 0 is opaque, 1 is transparent, use decimals if needed)
 )
 
 form:Button("Print Random String", "A various button.", function()
