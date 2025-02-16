@@ -6,7 +6,7 @@ if game:GetService("CoreGui"):FindFirstChild("School") then
 	notifSound.SoundId = "rbxassetid://170765130"
 	notifSound.PlayOnRemove = true
 	notifSound:Destroy()
-	game.StarterGui:SetCore("SendNotification", {Title = "School", Text = "Executed with no duplication", Icon = "rbxassetid://505845268", Duration = 2})
+	game.StarterGui:SetCore("SendNotification", {Title = "School", Text = "Executed with no duplication", Icon = "rbxassetid://505845268", Duration = 5})
 end
 
 local Lib = {}
